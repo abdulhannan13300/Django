@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home<h1>   
+    <form action="/analyze" method='post'> {% csrf_token %}
+        <textarea name='inputText' style='width: 825px; height: 183px;'></textarea><br>
+        <input type="checkbox" name="remPunc"> Remove Punctuations<br>
+        <input type="checkbox" name="charCount"> Character Counter<br>
+        <input type="checkbox" name="fullCaps"> Change to uppercase<br>
+        <input type="checkbox" name="newLineRem"> New Line Remover<br>
+        <input type="checkbox" name="extraSpaceRem"> Extra Space Remover<br>
+        <br><button type="submit">Analyze Text</button>
+
+    </form>
+        
+        
+ 
+</body>
+</html>
