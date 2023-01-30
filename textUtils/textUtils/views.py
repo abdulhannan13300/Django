@@ -39,14 +39,16 @@ def analyze(request):
             if char not in punctuations:
                 analyzed += char
         params = {'purpose':'Remove Punctuation', 'analyzed_text':analyzed}
-        return render(request,'analyze.html',params)        
+        data = analyzed
+        # return render(request,'analyzeUI.html',params)        
     
     if(fullcaps=='on'):
         analyzed = ""
         for char in data:
             analyzed += char.upper()
         params = {'purpose':'Change to Upppercase', 'analyzed_text':analyzed}
-        return render(request,'analyze.html',params)        
+        data = analyzed
+        # return render(request,'analyzeUI.html',params)        
     
     if(extraspaceremover=="on"):
         analyzed = ""
@@ -55,7 +57,8 @@ def analyze(request):
                 analyzed = analyzed + char
 
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
-        return render(request,'analyze.html',params)        
+        data = analyzed
+        # return render(request,'analyzeUI.html',params)        
 
     if (newlineremover == "on"):
         analyzed = ""
@@ -65,15 +68,17 @@ def analyze(request):
                 analyzed = analyzed + char
 
         params = {'purpose': 'Removed NewLines', 'analyzed_text': analyzed}
-        return render(request,'analyze.html',params)
+        data = analyzed
+        # return render(request,'analyzeUI.html',params)
         
     if(charcount=='on'):
         count = 0
         for char in data:
             count += 1
-        print("From"+data)
-        params = {'purpose':'Character Counter', 'analyzed_text':count}
-        return render(request,'analyze.html',params)    
-                 
+        params = {'purpose':'Character Counter','analyzed_text':count}
+        print(count)
+        # return render(request,'analyzeUI.html',params)    
+                
+    return render(request,'analyze.html',params)  
      
     
