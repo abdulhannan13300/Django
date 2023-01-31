@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def index(request):
     params = {'name':'Abdul Hannan', 'place':'Mumbai'}
-    return render(request, 'index.html',params)
+    return render(request, 'indexUI.html',params)
 
 def about(request):
     a = '''
@@ -79,6 +79,6 @@ def analyze(request):
         print(count)
         # return render(request,'analyzeUI.html',params)    
                 
-    return render(request,'analyze.html',params)  
+    return render(request,'analyzeUI.html',params)  
      
     
